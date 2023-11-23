@@ -26,6 +26,9 @@ public class MazeGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Empty GameObject as parent for maze cells
+        GameObject mazeCloneStorage = new GameObject("Maze Clone Storage");
+        
         //Initialise Array
         mazeGrid = new MazeCell[mazeWidth, mazeDepth];
         
@@ -37,6 +40,9 @@ public class MazeGenerator : MonoBehaviour
             {
                 //Instantiate instance of maze cell
                 mazeGrid[x,z] = Instantiate(mazeCellPrefab, new Vector3(x, 0, z), Quaternion.identity);
+                
+                // Set the newly created empty GameObject as the parent for each maze cell
+                mazeGrid[x, z].transform.parent = mazeCloneStorage.transform;
             }
         }
         //Null as 1st param because no previous cells exist, 2nd param is first grid in mazeGrid array
