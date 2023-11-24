@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4141119080584560962}
   - component: {fileID: 5469447712088202289}
+  - component: {fileID: 7208696933876720151}
   m_Layer: 0
   m_Name: Maze Cell
   m_TagString: Untagged
@@ -54,6 +55,27 @@ MonoBehaviour:
   frontWall: {fileID: 8041437624387654078}
   backWall: {fileID: 7968721614633787384}
   unvisitedBlock: {fileID: 7724467105888473740}
+--- !u!65 &7208696933876720151
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2892195049974475545}
+  m_Material: {fileID: 13400000, guid: c67bd713e31f2d646b46c23575f07ca2, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2909932055717047092
 GameObject:
   m_ObjectHideFlags: 0
