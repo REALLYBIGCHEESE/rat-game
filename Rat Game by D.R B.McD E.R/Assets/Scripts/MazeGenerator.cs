@@ -47,10 +47,14 @@ public class MazeGenerator : MonoBehaviour
         }
         //Null as 1st param because no previous cells exist, 2nd param is first grid in mazeGrid array
         GenerateMaze(null, mazeGrid[0,0]);
+
+        //Calls method to spawn rat
+        SpawnRatInMaze();
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
     {
+
         //Use visit method on current cell
         currentCell.Visit();
         //Call on clear walls method
@@ -191,4 +195,21 @@ public class MazeGenerator : MonoBehaviour
             currentCell.ClearFrontWall();
         }
     }
+
+    private void SpawnRatInMaze()
+    {
+        Vector3 spawnPosition = FindValidSpawnPosition();
+
+        Instantiate(rat, spawnPosition, Quaternion.identity);
+
+    }
+
+    private Vector3 FindValidSpawnPosition()
+    {
+        int centerX = mazeWidth / 2;
+        int centerZ = mazeDepth / 2;
+
+        return new Vector3(centerX, 0.5f, centerZ);
+    }
+
 }
