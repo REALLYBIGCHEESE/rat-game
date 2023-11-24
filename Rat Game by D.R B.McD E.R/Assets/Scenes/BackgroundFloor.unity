@@ -339,8 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeCellPrefab: {fileID: 5469447712088202289, guid: 17193d85e778644d7b07e27c7089a850, type: 3}
-  mazeWidth: 40
-  mazeDepth: 40
+  mazeWidth: 20
+  mazeDepth: 20
   RatPrefab: {fileID: 3683354760442123650, guid: e30a54367716e924faea193739eb0b70, type: 3}
 --- !u!4 &1242077567
 Transform:

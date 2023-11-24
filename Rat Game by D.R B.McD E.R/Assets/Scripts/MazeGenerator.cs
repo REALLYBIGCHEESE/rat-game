@@ -208,11 +208,12 @@ public class MazeGenerator : MonoBehaviour
 
     private Vector3 FindValidSpawnPosition()
     {
+        float mazeCellY = 0.0f;
         
         int centerX = mazeWidth / 2;
         int centerZ = mazeDepth / 2;
 
-        return new Vector3(centerX, 0.5f, centerZ);
+        return new Vector3(centerX, mazeCellY, centerZ);
     }
 
 }
