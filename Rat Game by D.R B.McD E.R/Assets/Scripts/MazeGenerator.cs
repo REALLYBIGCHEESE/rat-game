@@ -49,7 +49,7 @@ public class MazeGenerator : MonoBehaviour
         GenerateMaze(null, mazeGrid[0,0]);
 
         //Calls method to spawn rat
-        SpawnRatInMaze();
+       // SpawnRatInMaze();
     }
 
     private void GenerateMaze(MazeCell previousCell, MazeCell currentCell)
@@ -196,20 +196,20 @@ public class MazeGenerator : MonoBehaviour
         }
     }
 
-    private void SpawnRatInMaze()
-    {
-        Vector3 spawnPosition = FindValidSpawnPosition();
+   // private void SpawnRatInMaze()
+   // {
+   //     Vector3 spawnPosition = FindValidSpawnPosition();
 
-        Instantiate(rat, spawnPosition, Quaternion.identity);
+   //     Instantiate(rat, spawnPosition, Quaternion.identity);
 
-    }
+   // }
 
-    private Vector3 FindValidSpawnPosition()
-    {
-        int centerX = mazeWidth / 2;
-        int centerZ = mazeDepth / 2;
+   // private Vector3 FindValidSpawnPosition()
+   // {
+    //    int centerX = mazeWidth / 2;
+    //    int centerZ = mazeDepth / 2;
 
-        return new Vector3(centerX, 0.5f, centerZ);
-    }
+   //     return new Vector3(centerX, 0.5f, centerZ);
+   // }
 
 }
