@@ -201,11 +201,9 @@ public class MazeGenerator : MonoBehaviour
 
     private void SpawnRatInMaze()
     {
-        Debug.Log("rattttysspawnplz");
         Vector3 spawnPosition = FindValidSpawnPosition();
 
         Instantiate(RatPrefab, spawnPosition, Quaternion.identity);
-        Debug.Log("ratispawning");
     }
 
     private Vector3 FindValidSpawnPosition()
