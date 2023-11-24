@@ -74,7 +74,7 @@ public class MazeGenerator : MonoBehaviour
 
             //If next cell is not null
             if (nextCell != null)
-            {
+            { 
                 //Yield return to call coroutine
                 GenerateMaze(currentCell, nextCell);
             }
@@ -208,7 +208,7 @@ public class MazeGenerator : MonoBehaviour
 
     private Vector3 FindValidSpawnPosition()
     {
-        float mazeCellY = 0.0f;
+        float mazeCellY = 0.2f;
         
         int centerX = mazeWidth / 2;
         int centerZ = mazeDepth / 2;

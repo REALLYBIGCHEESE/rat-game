@@ -302,13 +302,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7660445, z: 0.6427876, w: 0}
-  m_LocalPosition: {x: 10, y: 20, z: 14}
+  m_LocalRotation: {x: 0.6278154, y: 0.002285662, z: 0.003893301, w: 0.7783492}
+  m_LocalPosition: {x: 10.35, y: 17.57, z: 3.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 80, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 77.769, y: 2.285, z: 2.416}
 --- !u!1 &1242077565
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,9 +339,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeCellPrefab: {fileID: 5469447712088202289, guid: 17193d85e778644d7b07e27c7089a850, type: 3}
-  mazeWidth: 20
-  mazeDepth: 20
-  RatPrefab: {fileID: 3683354760442123650, guid: e30a54367716e924faea193739eb0b70, type: 3}
+  mazeWidth: 15
+  mazeDepth: 15
+  RatPrefab: {fileID: 2043479165953121920, guid: 993f7752bf580794d9024482e912d545, type: 3}
 --- !u!4 &1242077567
 Transform:
   m_ObjectHideFlags: 0
