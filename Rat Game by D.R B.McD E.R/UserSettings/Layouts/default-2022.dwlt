@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 99
+  controlID: 107
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -120,8 +120,8 @@ MonoBehaviour:
     y: 0
     width: 1335
     height: 787
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 98
+  controlID: 106
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 44
+  controlID: 38
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 959
     height: 617
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -409,9 +409,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ee050000
-    m_LastClickedID: 1518
-    m_ExpandedIDs: 00000000ee050000ae06000000ca9a3bffffff7f
+    m_SelectedIDs: e4590000
+    m_LastClickedID: 23012
+    m_ExpandedIDs: 00000000e459000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -439,7 +439,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 76590000
     m_LastClickedID: 22902
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000e4590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -923,9 +923,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 12.937672, y: 20.570438, z: 7.70145}
+    m_Target: {x: -72.37082, y: -57.483868, z: 42.63348}
     speed: 2
-    m_Value: {x: 12.937672, y: 20.570438, z: 7.70145}
+    m_Value: {x: -72.37082, y: -57.483868, z: 42.63348}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -971,13 +971,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.39960718, y: -0.57631487, z: 0.38294458, w: 0.6013505}
+    m_Target: {x: -0.28522748, y: 0.41390675, z: -0.13821824, w: -0.8534198}
     speed: 2
-    m_Value: {x: 0.39958847, y: -0.57628787, z: 0.38292664, w: 0.6013223}
+    m_Value: {x: -0.28393242, y: 0.41409227, z: -0.13759, w: -0.8538026}
   m_Size:
-    m_Target: 3.5617814
+    m_Target: 64.715576
     speed: 2
-    m_Value: 3.5617814
+    m_Value: 64.715576
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1039,23 +1039,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 3ce4d2ff6ee4d2ff54ead2ff86ead2ff0a25d3ff9680daff18ccddff3cccddffee0bdeffe074dfff1275dfffdc93dfffb279e3ffd679e3ffbe4fe6fff04fe6ff1656e6ff2456e6ff5656e6ff6e9ce6ff20ebe6ff60ebe6ff021ae7ff724fe8ffaa4fe8ffb24fe8ff168fe8ffb499ebfff499ebffdaf3ebff002decff082decff6e73ecff8a94edffca94edffdcecedff92f4edff08f4eeffe88befff5e09f0ff3685f0ffaefdf1ffb6fdf1ffb208f2ff0652f2ff4652f2ff5057f2ff7457f2ff9e57f2ffc257f2ff3093f2ff1e19f3ff3856f3ff5c56f3ff505cf3ff745cf3ff0293f3ff2696f3ff40e6f3ff48e6f3ff180af4ff0a10f4ffb23df4ffd63df4ffc48cf4ff0c90f4ff8ec2f6ffd0c2f6ffb40af7ffcc13f7ff4ac9f7ff6ec9f7ff380ff8ff7c12f8ffa23ff8ffe23ff8ff608cf8ff7a97f8ff6897f9ff3c95faffb2ebfaffe2ebfaffe611fbffb831fcff642afeff247cfeff547cfeff28a1feff9c27ffff2030ffff
+      m_SelectedIDs: 6c7dfeff
+      m_LastClickedID: -98964
+      m_ExpandedIDs: 30fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Fog of war plane
+        m_OriginalName: Fog of war plane
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -98964
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 2}
       m_SearchString: 
