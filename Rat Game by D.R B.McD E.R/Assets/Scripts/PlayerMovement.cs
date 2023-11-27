@@ -40,24 +40,24 @@ public class PlayerMovement : MonoBehaviour
 
     void StopPlayer()
     {
-        // Stop the player by setting velocity to zero
+        //Stop player by setting velocity to zero
         rb.velocity = Vector3.zero;
     }
 
     void KeepUpright()
     {
-        // Keep the player upright using rotation
+        //Keep player upright using rotation
         Quaternion uprightRotation = Quaternion.FromToRotation(transform.up, Vector3.up) * transform.rotation;
         rb.MoveRotation(uprightRotation);
     }
 
     void KeepOnGround()
     {
-        // Raycast to check the ground height
+        //Raycast to check the ground height
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
         {
-            // Adjust the position to stay on the ground
+            //Adjust the position to stay on the ground
             float targetHeight = hit.point.y + capsuleHeight / 10f;
             rb.position = new Vector3(rb.position.x, targetHeight, rb.position.z);
         }
