@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cheese : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Cheese : MonoBehaviour
 
     //Exit object
     private GameObject exitObject;
+    
 
 
 
@@ -32,6 +34,8 @@ public class Cheese : MonoBehaviour
 
             //Destroy the collected cheese object
             Destroy(gameObject);
+            
+         
 
             //If cheese score reaches 3
             if (cheeseScore == 3)
@@ -41,4 +45,12 @@ public class Cheese : MonoBehaviour
             }
         }
     }
+    
+    //Method to get cheese score
+    public int GetCheeseScore()
+    {
+        return cheeseScore;
+    }
+    
+    
 }
