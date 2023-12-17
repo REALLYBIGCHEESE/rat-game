@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
         // Move the player
         MovePlayer(movement);
 
+        // Rotate the player
+        RotatePlayer(movement);
+
         // Keep the player upright
         KeepUpright();
 
@@ -38,26 +41,36 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
+    void RotatePlayer(Vector3 movement)
+    {
+        // If there is input, rotate the player to face the direction of movement
+        if (movement != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.fixedDeltaTime * 100f);
+        }
+    }
+
     void StopPlayer()
     {
-        //Stop player by setting velocity to zero
+        // Stop player by setting velocity to zero
         rb.velocity = Vector3.zero;
     }
 
     void KeepUpright()
     {
-        //Keep player upright using rotation
+        // Keep player upright using rotation
         Quaternion uprightRotation = Quaternion.FromToRotation(transform.up, Vector3.up) * transform.rotation;
         rb.MoveRotation(uprightRotation);
     }
 
     void KeepOnGround()
     {
-        //Raycast to check the ground height
+        // Raycast to check the ground height
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
         {
-            //Adjust the position to stay on the ground
+            // Adjust the position to stay on the ground
             float targetHeight = hit.point.y + capsuleHeight / 10f;
             rb.position = new Vector3(rb.position.x, targetHeight, rb.position.z);
         }

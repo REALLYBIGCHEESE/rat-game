@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public int startingLives = 3;   //Initial number of lives
     private int currentLives;       //Current number of lives
-    private Vector3 initialSpawnPosition = new Vector3(7.980699f, 0.4000001f, 2.942528f);  //Initial spawn coordinates
+    private Vector3 initialSpawnPosition = new Vector3(8.525f, 0.5f, 2.796f);  //Initial spawn coordinates
     private Vector3 respawnPosition;//Respawn coordinates
 
     void Start()
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     }
     void GameOver()
     {
-        // Game Over logic
+        //Game Over logic
         Debug.Log("Game Over");
     }
 
@@ -68,8 +68,8 @@ public class PlayerController : MonoBehaviour
     {
         //Respawn the player at the specified coordinates
         transform.position = respawnPosition;
-
-        //Additional logic for respawning if needed
+      //  transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        
     }
 
     void UpdateLivesDisplay()
