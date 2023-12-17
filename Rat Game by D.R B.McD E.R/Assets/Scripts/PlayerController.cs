@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public int startingLives = 3;   //Initial number of lives
     private int currentLives;       //Current number of lives
-    private Vector3 initialSpawnPosition = new Vector3(8.525f, 0.5f, 2.796f);  //Initial spawn coordinates
+    private Vector3 initialSpawnPosition = new Vector3(7.365f, 0.04000032f, 3.14f);  //Initial spawn coordinates
     private Vector3 respawnPosition;//Respawn coordinates
 
     void Start()

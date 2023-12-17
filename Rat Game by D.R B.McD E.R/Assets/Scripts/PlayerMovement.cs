@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (movement != Vector3.zero)
         {
             Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.fixedDeltaTime * 100f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.fixedDeltaTime * 200f);
         }
     }
 
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
         {
             // Adjust the position to stay on the ground
-            float targetHeight = hit.point.y + capsuleHeight / 10f;
+            float targetHeight = hit.point.y + capsuleHeight / 1000f;
             rb.position = new Vector3(rb.position.x, targetHeight, rb.position.z);
         }
     }
