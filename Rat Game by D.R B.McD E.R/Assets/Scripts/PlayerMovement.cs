@@ -2,77 +2,55 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //Speed of the player movement
     public float speed = 5f;
-    private Rigidbody rb;
-    private float capsuleHeight;
+    
+    //Rigidbody component of the player
+    private Rigidbody rb; 
 
     void Start()
     {
+        //Get the Rigidbody component and freeze its rotation
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // Freeze rotation to prevent automatic rotation
-        capsuleHeight = GetComponent<CapsuleCollider>().height;
+        rb.freezeRotation = true;
     }
 
     void FixedUpdate()
     {
-        // Get input for movement
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        //Get the horizontal and vertical input using GetAxisRaw for snappier response
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-        // Calculate movement direction
+        //Create a movement vector based on the input
         Vector3 movement = new Vector3(horizontal, 0f, vertical).normalized;
 
-        // Move the player
-        MovePlayer(movement);
-
-        // Rotate the player
-        RotatePlayer(movement);
-
-        // Keep the player upright
-        KeepUpright();
-
-        // Keep the player on the ground
-        KeepOnGround();
+        //Move and instantly rotate the player if there is any input
+        if (movement.magnitude > 0)
+        {
+            MovePlayer(movement);
+            InstantRotatePlayer(movement);
+        }
     }
 
     void MovePlayer(Vector3 movement)
     {
-        // Move the player using physics
-        rb.AddForce(movement * speed);
+        //Calculate the new position based on the input movement
+        Vector3 newPosition = rb.position + movement * speed * Time.fixedDeltaTime;
+        
+        //Move the Rigidbody to the new position
+        rb.MovePosition(newPosition);
     }
 
-    void RotatePlayer(Vector3 movement)
+    void InstantRotatePlayer(Vector3 movement)
     {
-        // If there is input, rotate the player to face the direction of movement
+        //Determine the direction to rotate based on the movement vector
         if (movement != Vector3.zero)
         {
-            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, Time.fixedDeltaTime * 200f);
-        }
-    }
-
-    void StopPlayer()
-    {
-        // Stop player by setting velocity to zero
-        rb.velocity = Vector3.zero;
-    }
-
-    void KeepUpright()
-    {
-        // Keep player upright using rotation
-        Quaternion uprightRotation = Quaternion.FromToRotation(transform.up, Vector3.up) * transform.rotation;
-        rb.MoveRotation(uprightRotation);
-    }
-
-    void KeepOnGround()
-    {
-        // Raycast to check the ground height
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity))
-        {
-            // Adjust the position to stay on the ground
-            float targetHeight = hit.point.y + capsuleHeight / 1000f;
-            rb.position = new Vector3(rb.position.x, targetHeight, rb.position.z);
+            //Calculate the target rotation based on the direction
+            Quaternion targetRotation = Quaternion.LookRotation(movement, Vector3.up);
+            
+            //Set the player's rotation instantly to the target rotation
+            rb.rotation = targetRotation;
         }
     }
 }
