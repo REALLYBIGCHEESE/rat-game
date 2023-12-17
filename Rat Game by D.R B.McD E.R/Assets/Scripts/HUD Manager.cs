@@ -7,7 +7,9 @@ public class HUDManager : MonoBehaviour
     public Text cheeseText;
 
     private PlayerController playerController;
-    private Cheese cheeseScript; // Direct reference to the Cheese script
+    
+    //Direct reference to the Cheese script
+    private Cheese cheeseScript;
 
     void Start()
     {

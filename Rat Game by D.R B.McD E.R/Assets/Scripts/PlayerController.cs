@@ -1,69 +1,55 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public int startingLives = 3;
-    private int currentLives;
-    private Vector3 respawnPosition;
+    public int startingLives = 3;   //Initial number of lives
+    private int currentLives;       //Current number of lives
+    private Vector3 initialSpawnPosition = new Vector3(7.365f, 0.04000032f, 3.14f);  //Initial spawn coordinates
+    private Vector3 respawnPosition;//Respawn coordinates
 
     void Start()
     {
         currentLives = startingLives;
-
-        // Set respawn position based on the current scene
-        SetRespawnPosition();
-
-        RespawnPlayer();
+        respawnPosition = initialSpawnPosition; //Set the respawn position 
+        RespawnPlayer(); //Spawn the player 
         UpdateLivesDisplay();
     }
 
-    void SetRespawnPosition()
-    {
-        // Set respawn position based on the current scene
-        Scene currentScene = SceneManager.GetActiveScene();
-        switch (currentScene.name)
-        {
-            case "Easy Level":
-                // Coordinates for Easy level
-                respawnPosition = new Vector3(7.365f, 0.04000032f, 3.14f);
-                break;
 
-            case "Medium Level":
-                //Coordinates for Medium Level
-                respawnPosition = new Vector3(7.365f, 0.04000032f, 3.14f);  
-                break;
 
-           
 
-            default:
-                respawnPosition = Vector3.zero;  // Default coordinates
-                break;
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Check if the colliding object has the "Enemy" tagss
         if (other.CompareTag("Enemy"))
         {
+            //Decrease the number of lives
             currentLives--;
 
+            //Display the updated lives in the console
             Debug.Log("Lives: " + currentLives);
 
+            //Check if there are remaining lives
             if (currentLives > 0)
             {
+                //Delay the destruction of the player object for a moment
                 Invoke("RespawnPlayer", 0f);
             }
             else
-            {
+
+            {                              
+                //permanently destroy the player
                 Destroy(gameObject);
                 GameOver();
             }
-        }
-    }
 
+        }
+
+    }
     public void IncreaseLives()
     {
+        //Increase player lives by one
         currentLives++;
         Debug.Log("Player Lives: " + currentLives);
     }
@@ -72,19 +58,21 @@ public class PlayerController : MonoBehaviour
     {
         return currentLives;
     }
-
     void GameOver()
     {
+        //Game Over logic
         Debug.Log("Game Over");
     }
 
     void RespawnPlayer()
     {
+        //Respawn the player at the specified coordinates
         transform.position = respawnPosition;
     }
 
     void UpdateLivesDisplay()
     {
+        //Display the initial lives in the console
         Debug.Log("Starting Lives: " + startingLives);
     }
 }
